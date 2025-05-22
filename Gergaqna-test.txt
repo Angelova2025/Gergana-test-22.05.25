@@ -1,0 +1,52 @@
+﻿ internal class Program
+    {
+        class Car
+        {
+            public string Brand;
+            public int Year;
+            public double fuelConsumption;
+        }
+        public string Brand
+        {
+            get { return Brand; }
+            set { Brand = value; }
+        }
+        public int Year
+        {
+            get { return Year; }
+            set { Year = value; }
+        }
+        public double FuelConsumption
+        {
+            get { return FuelConsumption; }
+            set { FuelConsumption = value; }
+        }
+        public Car(string brand, int year, double FuelConsumption)
+        {
+           this.Brand = brand;
+            this.Year = year;
+            this.FuelConsumption = FuelConsumption;
+        }
+        public int GetCarAge()
+        {
+            int currentYear = 2025;
+            return currentYear - Year;
+        }
+        public double CalculateFuelCost(double distance, double fuelPrice) 
+        { 
+          double litersNeeded = (FuelConsumption / 100) * distance;
+          return litersNeeded * fuelPrice;
+        }
+
+        static void Main(string[] args)
+        {
+            Car myCar = new Car("Toyota", 2015, 7.5);
+            Console.WriteLine("Марка: " + myCar.Brand);
+            Console.WriteLine("Година: " + myCar.Year);
+            double distance = 200;
+            Console.WriteLine("Разход: " + myCar.FuelConsumption + "л/100км");
+            Console.WriteLine("Марка: " + myCar.GetCarAge);
+
+            double cost = myCar.CalculateFuelCost(100, 2.60);
+            Console.WriteLine("Цена за гориво за 100 км: " + cost + "лв.");
+        }
