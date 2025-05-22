@@ -1,0 +1,28 @@
+﻿ internal class Program
+    {
+        class BankAccount
+        {
+            private string accountNumber;
+            private decimal balance;
+        }
+        public string AccountHolder 
+        {
+            get; set;
+        }
+        public bool IsActive { get; set; } 
+        
+        public BankAccount(string number, string holder, decimal initialBalance)
+        {
+            accountNumber = number;
+            AccountHolder = holder;
+            balance = initialBalance;
+            IsActive = true;
+        }
+        public void Deposit(decimal amout)
+        static void Main(string[] args) 
+        { 
+        
+        }
+        
+    }
+}
